@@ -14,3 +14,9 @@
     align-items: center;
 }
 
+@mixin total-width-little-screen{
+    @media (max-width:700px) {
+        width:variables.$total-width;
+    }
+}
+

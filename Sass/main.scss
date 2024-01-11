@@ -2,7 +2,7 @@
 @use 'mixins';
 
 body{
-    // height: 100vh;
+    height: 100vh;
     background:variables.$body-bg-color;
     display: flex;
     flex-direction: column;
@@ -16,23 +16,25 @@ body{
     margin: 0;
 
     h1{
+        width: 75%;
         padding: 5px;
         box-shadow: variables.$box-shadow;
         background-color:variables.$math-box-bg;
         border-radius: variables.$border-radius;
+        @include mixins.total-width-little-screen
     }
     .container{
+        padding: 5px;
         display: flex;
         flex-direction: column;
         background-color: variables.$math-box-bg;
         border-radius: variables.$border-radius;
-        margin-top: 4%;
+        // margin-top: 4%;
         width: 75%;
-        height: 75%;
+        height: 90%;
         box-shadow: variables.$box-shadow;
-        @media (max-width:700px) {
-            width:variables.$total-width;
-        }
+        @include mixins.total-width-little-screen;
+
         //debut pour score exact try again
         .score-exact-try-box {
             display: flex;
@@ -81,10 +83,10 @@ body{
             align-items: center;
             text-align: center;
             padding: 5px;
-            width: 70%;
+            width: 80%;
             // border: 1px solid;
-            height:70%;
-            margin: 10px;
+            height:90%;
+            // margin: 10px;
             margin-bottom: 20px;
             .afaire{
                 @include mixins.score-exact-try-items-style; //meme stytle au niveau des bordure que score,exact..
@@ -136,6 +138,7 @@ body{
             }
         }
         // fin clique,calcul à faire et choix
+
         .start-game-compteur{
             display: flex;
             justify-content: space-evenly;
@@ -154,34 +157,31 @@ body{
                     top: 2px;
                 }
             }
-            .compteur{
+            .compteur,.vide{
                 background-color:variables.$bg-color-choice;
                 @include mixins.score-exact-try-items-style;
                 width: 10%;
-                // visibility: hidden;
-                display: none;
+                visibility: hidden;
+                // display: none;
             }
         }
         
     }
-    .game-over{
-        text-transform: uppercase;
-        z-index: 5;
-        position: relative;
-        font-weight: bold;
-        bottom: 370px;
-        @media screen {
-            
-        }
-        width: 230px;
-        height: 250px;
-        text-align: center;
-        background: variables.$game-over-bg-color;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        font-size: 25px;
-        color: variables.$game-over-text;
-        display: none;
-    }
+    // .game-over{
+    //     text-transform: uppercase;
+    //     z-index: 5;
+    //     position: relative;
+    //     font-weight: bold;
+    //     // bottom: 370px;
+    //     width: 230px;
+    //     height: 250px;
+    //     text-align: center;
+    //     background: variables.$game-over-bg-color;
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: center;
+    //     font-size: 25px;
+    //     color: variables.$game-over-text;
+    //     // display: none;
+    // }
 }
