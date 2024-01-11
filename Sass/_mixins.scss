@@ -1,0 +1,16 @@
+@use 'variables';
+
+@mixin score-exact-try-items-style{
+    font-weight: bold;
+    border-radius: variables.$border-radius;
+    padding: 5px;
+    box-shadow: variables.$box-shadow;
+    width: 15%;
+}
+
+@mixin total-centered-item-in-row-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

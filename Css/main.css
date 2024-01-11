@@ -1,0 +1,187 @@
+@charset "UTF-8";
+body {
+  height: 110vh;
+  background: radial-gradient(circle, #e2d6d6, rgba(171, 199, 214, 0.7215686275));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 10px;
+  margin: 0;
+}
+body h1 {
+  padding: 5px;
+  box-shadow: 0px 2px 5px;
+  background-color: rgb(132, 195, 195);
+  border-radius: 10px;
+}
+body .container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(132, 195, 195);
+  border-radius: 10px;
+  margin-top: 4%;
+  width: 75%;
+  height: 75%;
+  box-shadow: 0px 2px 5px;
+}
+@media (max-width: 700px) {
+  body .container {
+    width: 100%;
+  }
+}
+body .container .score-exact-try-box {
+  display: flex;
+  padding: 5px;
+  justify-content: space-between;
+  position: relative; /* Ajoutez ceci pour positionner les éléments enfants absolus */
+}
+body .container .score-exact-try-box .score {
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0px 2px 5px;
+  width: 15%;
+  background-color: yellow;
+}
+body .container .score-exact-try-box .exact,
+body .container .score-exact-try-box .try-again {
+  position: absolute;
+  top: 5px;
+  left: 37.5%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  display: none;
+}
+body .container .score-exact-try-box .exact {
+  font-weight: bold;
+  background-color: rgb(54, 203, 64);
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0px 2px 5px;
+  width: 15%;
+}
+body .container .score-exact-try-box .try-again {
+  background-color: red;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0px 2px 5px;
+  width: 15%;
+  width: 25%;
+}
+body .container .afaire-clique-choix {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+  width: 70%;
+  height: 70%;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+body .container .afaire-clique-choix .afaire {
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0px 2px 5px;
+  width: 15%;
+  width: 100%;
+  height: 40%;
+  background-color: antiquewhite;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 120px;
+}
+body .container .afaire-clique-choix .clique {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0px 2px 5px;
+  width: 15%;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 30px;
+  background-color: beige;
+}
+body .container .afaire-clique-choix .choix {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 20%;
+  position: relative;
+}
+body .container .afaire-clique-choix .choix div {
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0px 2px 5px;
+  width: 15%;
+  background-color: azure;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  cursor: pointer;
+}
+body .container .afaire-clique-choix .choix div:hover {
+  background-color: antiquewhite;
+}
+body .container .start-game-compteur {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5px;
+}
+body .container .start-game-compteur .jouer-relancer {
+  background-color: azure;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0px 2px 5px;
+  width: 15%;
+  cursor: pointer;
+}
+body .container .start-game-compteur .jouer-relancer:hover {
+  background-color: aquamarine;
+}
+body .container .start-game-compteur .compteur {
+  background-color: azure;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0px 2px 5px;
+  width: 15%;
+  width: 25%;
+}
+body .game-over {
+  text-transform: uppercase;
+  z-index: 5;
+  position: relative;
+  font-weight: bold;
+  bottom: 350px;
+  width: 50%;
+  height: 250px;
+  text-align: center;
+  background: linear-gradient(to top, rgb(223, 95, 95), rgb(168, 168, 68));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 25px;
+  color: rgb(238, 230, 230);
+  display: none;
+}
+
+/*# sourceMappingURL=main.css.map */

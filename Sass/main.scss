@@ -1,0 +1,173 @@
+@use 'variables';
+@use 'mixins';
+
+body{
+    height: 110vh;
+    background:variables.$body-bg-color;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px 10px;
+    // @media (max-width:700px) {
+    //     height: 90vh;
+    // }
+    margin: 0;
+
+    h1{
+        padding: 5px;
+        box-shadow: variables.$box-shadow;
+        background-color:variables.$math-box-bg;
+        border-radius: variables.$border-radius;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        background-color: variables.$math-box-bg;
+        border-radius: variables.$border-radius;
+        margin-top: 4%;
+        width: 75%;
+        height: 75%;
+        box-shadow: variables.$box-shadow;
+        @media (max-width:700px) {
+            width:variables.$total-width;
+        }
+        //debut pour score exact try again
+        .score-exact-try-box {
+            display: flex;
+            padding: 5px;
+            justify-content: space-between;
+            position: relative; /* Ajoutez ceci pour positionner les éléments enfants absolus */
+          
+            .score {
+              @include mixins.score-exact-try-items-style;
+              background-color: variables.$score-bg-color;
+            }
+          
+            .exact,
+            .try-again {
+              position: absolute;
+              top: 5px;
+              left: 37.5%;
+            //   width: 25%;
+              padding: 5px;
+            //   height: 100%;
+              @include mixins.total-centered-item-in-row-flex;
+              border-radius: 10px;
+              display:none;
+            }
+          
+            .exact {
+              font-weight: bold;
+              background-color: variables.$exact-bg-color;
+              @include mixins.score-exact-try-items-style;
+            //   z-index: 2;
+            }
+          
+            .try-again {
+              background-color: variables.$try-again-bg-color;
+              @include mixins.score-exact-try-items-style;
+              width: 25%;
+            }
+          }
+          //fin pour score exact try again
+          
+          //debut calcul à faire,clique ici,et choix possible
+        .afaire-clique-choix{
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 5px;
+            width: 70%;
+            // border: 1px solid;
+            height:70%;
+            margin: 10px;
+            margin-bottom: 20px;
+            .afaire{
+                @include mixins.score-exact-try-items-style; //meme stytle au niveau des bordure que score,exact..
+                width:variables.$total-width;
+                height: 40%;
+                background-color: variables.$afaire-bg-color;
+                margin-bottom: 30px;
+                @include mixins.total-centered-item-in-row-flex;
+                font-size: 120px;
+            }
+            //clique pour le message qui dit de cliquer pour commencer le jeu
+            .clique{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @include mixins.score-exact-try-items-style;
+                width:variables.$total-width;
+                height: 60px;
+                margin-bottom: 30px;
+                background-color: variables.$instruction-bg-color;
+            }
+            .choix{
+                width:variables.$total-width;
+                display: flex;
+                text-align: center;
+                justify-content: space-between;
+                width:variables.$total-width;
+                height: 20%;
+                position: relative;
+                div{
+                    @include mixins.score-exact-try-items-style;
+                    background-color:variables.$bg-color-choice;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 40px;
+                    cursor: variables.$cursor-pointer;
+                    &:hover{
+                        background-color: variables.$afaire-bg-color;
+                    }
+
+                }
+
+            }
+        }
+        // fin clique,calcul à faire et choix
+        .start-game-compteur{
+            display: flex;
+            justify-content: space-evenly;
+            padding: 5px;
+            .jouer-relancer{
+                // width: 80%;
+                background-color:variables.$bg-color-choice;
+                @include mixins.score-exact-try-items-style;
+                cursor: variables.$cursor-pointer;
+                &:hover{
+                    background-color: aquamarine;
+                }
+            }
+            .compteur{
+                background-color:variables.$bg-color-choice;
+                @include mixins.score-exact-try-items-style;
+                width: 25%;
+                // visibility: hidden;
+            }
+        }
+        
+    }
+    .game-over{
+        text-transform: uppercase;
+        z-index: 5;
+        position: relative;
+        font-weight: bold;
+        bottom: 350px;
+        width: 50%;
+        height: 250px;
+        text-align: center;
+        background: linear-gradient(to top,rgb(223, 95, 95),rgb(168, 168, 68));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 25px;
+        color: rgb(238, 230, 230);
+        display: none;
+    }
+}

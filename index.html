@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ,user-scalable=yes">
+    <link rel="stylesheet" href="Css/main.css">
+    <title>Maths Game</title>
+</head>
+<body>
+    <h1>Défiez Vos Compétences en Multiplication</h1>
+    <!-- le container pour notre jeux -->
+    <div class="container">
+
+
+        <!-- emplacement pour le score,exact quand c'est vrai, essaie encore quand c'est faux et le score -->
+        <div class="score-exact-try-box">
+
+            <!-- notre div pour que exact et try again puisse occuper le meme espace -->
+            <div class="exact-try-again">
+                <div class="exact">Exact</div>
+            <div class="try-again">Essaie Encore</div>
+            </div>
+            <div class="score">
+                Score: <span id="scoreValue">0</span> <!--span car on aura besoin du score par la suite avec javaScript-->
+            </div>
+        </div>
+
+
+        <!-- notre div ou le calcul a faire va apparaitres,le message demandant de choisir va apparaitre et les choix possibles aussi -->
+        <div class="afaire-clique-choix">
+            <div class="afaire">
+               7*8
+            </div>
+            <div class="clique">
+                Cliquez sur la bonne reponse
+            </div>
+            <div class="choix">
+                <div class="box1">56</div>
+                <div class="box2">42</div>
+                <div class="box3">25</div>
+                <div class="box4">60</div>
+            </div>
+        </div>
+
+
+         <!-- notre bouton start game et le compteur -->
+         <div class="start-game-compteur">
+            <div class="jouer-relancer">Jouer</div>
+            <div class="compteur"> Il reste: <span id="temps-restant">60</span> sec</div>
+        </div>
+    </div>
+    <!-- Game over code -->
+    <div class="game-over">
+
+    </div>
+</body>
+</html>
