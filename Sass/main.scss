@@ -2,14 +2,14 @@
 @use 'mixins';
 
 body{
-    height: 110vh;
+    // height: 100vh;
     background:variables.$body-bg-color;
     display: flex;
     flex-direction: column;
     // justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px 10px;
+    padding: 10px;
     // @media (max-width:700px) {
     //     height: 90vh;
     // }
@@ -62,7 +62,7 @@ body{
               font-weight: bold;
               background-color: variables.$exact-bg-color;
               @include mixins.score-exact-try-items-style;
-            //   z-index: 2;
+              z-index: 2;
             }
           
             .try-again {
@@ -121,9 +121,14 @@ body{
                     justify-content: center;
                     align-items: center;
                     font-size: 40px;
+                    position:relative;
+                    transition: all 0.5s;
                     cursor: variables.$cursor-pointer;
                     &:hover{
                         background-color: variables.$afaire-bg-color;
+                    }
+                    &:active{
+                        top: 2px;
                     }
 
                 }
@@ -140,15 +145,21 @@ body{
                 background-color:variables.$bg-color-choice;
                 @include mixins.score-exact-try-items-style;
                 cursor: variables.$cursor-pointer;
+                position: relative;
+                transition: all 0.5s;
                 &:hover{
                     background-color: aquamarine;
+                }
+                &:active{
+                    top: 2px;
                 }
             }
             .compteur{
                 background-color:variables.$bg-color-choice;
                 @include mixins.score-exact-try-items-style;
-                width: 25%;
+                width: 10%;
                 // visibility: hidden;
+                display: none;
             }
         }
         
@@ -158,16 +169,19 @@ body{
         z-index: 5;
         position: relative;
         font-weight: bold;
-        bottom: 350px;
-        width: 50%;
+        bottom: 370px;
+        @media screen {
+            
+        }
+        width: 230px;
         height: 250px;
         text-align: center;
-        background: linear-gradient(to top,rgb(223, 95, 95),rgb(168, 168, 68));
+        background: variables.$game-over-bg-color;
         display: flex;
         flex-direction: column;
         justify-content: center;
         font-size: 25px;
-        color: rgb(238, 230, 230);
+        color: variables.$game-over-text;
         display: none;
     }
 }

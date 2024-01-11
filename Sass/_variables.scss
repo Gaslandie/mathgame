@@ -1,16 +1,14 @@
-$math-box-bg:rgb(132, 195, 195);//bg colour pour notre box qui va contenir notre jeu
-$box-shadow:0px 2px 5px; 
-$border-radius:10px;
-$body-bg-color:radial-gradient(circle,#e2d6d6,#abc7d6b8);//background couleur de notre body
-$score-bg-color:yellow; //background color de notre box ou se trouve le score du joueur
-$exact-bg-color:rgb(54, 203, 64); //background color de la box qui se presente lorsque cest vrai
-$try-again-bg-color:red; //background color de la box lorsque c'est pas vrai
-
-$afaire-bg-color:antiquewhite; //background de la box ou le calcul à faire apparait
-$bg-color-choice: azure; //couleur des box ou se trouve les choix possible pour notre joueur
-$instruction-bg-color:beige;//background color pour la box ou on donne l'instruction à notre jouer avec la phrase "cliquez sur la bonne reponse"
-
-
-
+$math-box-bg: #26A69A;
+$box-shadow: 0px 2px 5px;
+$border-radius: 10px;
+$body-bg-color: radial-gradient(circle, #B2DFDB, #80CBC4);
+$score-bg-color: #FFF9C4;
+$exact-bg-color: #81C784;
+$try-again-bg-color: #E57373;
+$afaire-bg-color: #FFF9C4;
+$bg-color-choice: #80DEEA;
+$instruction-bg-color: #FFCC80;
+$game-over-bg-color: linear-gradient(to top, #A5D6A7, #C8E6C9);
+$game-over-text: #37474F;
 $total-width:100%; //pour un width de 100%
 $cursor-pointer: pointer;
