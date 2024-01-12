@@ -81,18 +81,19 @@ body .container .score-exact-try-box .try-again {
   width: 15%;
   width: 25%;
 }
-body .container .afaire-clique-choix {
+body .container .afaire-instruction-choix {
   align-self: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  justify-content: space-between;
   padding: 5px;
   width: 80%;
   height: 90%;
   margin-bottom: 20px;
 }
-body .container .afaire-clique-choix .afaire {
+body .container .afaire-instruction-choix .afaire {
   font-weight: bold;
   border-radius: 10px;
   padding: 5px;
@@ -101,13 +102,30 @@ body .container .afaire-clique-choix .afaire {
   width: 100%;
   height: 40%;
   background-color: #FFF9C4;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 120px;
 }
-body .container .afaire-clique-choix .clique {
+body .container .afaire-instruction-choix .game-over {
+  border: 1px solid;
+  height: auto;
+  border-radius: 10px;
+  width: 100%;
+  background: linear-gradient(to top, #A5D6A7, #C8E6C9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 25px;
+  color: #37474F;
+  text-align: center;
+  z-index: 5;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: none;
+}
+body .container .afaire-instruction-choix .instruction {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -117,20 +135,20 @@ body .container .afaire-clique-choix .clique {
   box-shadow: 0px 2px 5px;
   width: 15%;
   width: 100%;
-  height: 60px;
+  height: 40px;
   margin-bottom: 30px;
   background-color: #FFCC80;
 }
-body .container .afaire-clique-choix .choix {
+body .container .afaire-instruction-choix .choix {
   width: 100%;
   display: flex;
   text-align: center;
   justify-content: space-between;
   width: 100%;
-  height: 20%;
+  height: 15%;
   position: relative;
 }
-body .container .afaire-clique-choix .choix div {
+body .container .afaire-instruction-choix .choix div {
   font-weight: bold;
   border-radius: 10px;
   padding: 5px;
@@ -145,16 +163,17 @@ body .container .afaire-clique-choix .choix div {
   transition: all 0.5s;
   cursor: pointer;
 }
-body .container .afaire-clique-choix .choix div:hover {
+body .container .afaire-instruction-choix .choix div:hover {
   background-color: #FFF9C4;
 }
-body .container .afaire-clique-choix .choix div:active {
+body .container .afaire-instruction-choix .choix div:active {
   top: 2px;
 }
 body .container .start-game-compteur {
   display: flex;
   justify-content: space-evenly;
   padding: 5px;
+  margin-bottom: 10px;
 }
 body .container .start-game-compteur .jouer-relancer {
   background-color: #80DEEA;
@@ -181,7 +200,7 @@ body .container .start-game-compteur .compteur, body .container .start-game-comp
   box-shadow: 0px 2px 5px;
   width: 15%;
   width: 10%;
-  visibility: hidden;
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */

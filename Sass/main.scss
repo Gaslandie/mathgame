@@ -76,12 +76,13 @@ body{
           //fin pour score exact try again
           
           //debut calcul à faire,clique ici,et choix possible
-        .afaire-clique-choix{
+        .afaire-instruction-choix{
             align-self: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            justify-content: space-between;
             padding: 5px;
             width: 80%;
             // border: 1px solid;
@@ -93,20 +94,39 @@ body{
                 width:variables.$total-width;
                 height: 40%;
                 background-color: variables.$afaire-bg-color;
-                margin-bottom: 30px;
+                margin-bottom: 10px;
                 @include mixins.total-centered-item-in-row-flex;
                 font-size: 120px;
             }
-            //clique pour le message qui dit de cliquer pour commencer le jeu
-            .clique{
+            //GameOver box
+            .game-over{
+                border: 1px solid;
+                height: auto;
+                border-radius: variables.$border-radius;
+                width:variables.$total-width;
+                background: variables.$game-over-bg-color;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                font-size: 25px;
+                color: variables.$game-over-text;
+                text-align: center;
+                z-index: 5;
+                font-weight: bold;
+                text-transform: uppercase;
+                display: none;
+            }
+            //instruction pour le message qui dit de cliquer pour commencer le jeu
+            .instruction{
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 @include mixins.score-exact-try-items-style;
                 width:variables.$total-width;
-                height: 60px;
+                height: 40px;
                 margin-bottom: 30px;
                 background-color: variables.$instruction-bg-color;
+                // display: none;
             }
             .choix{
                 width:variables.$total-width;
@@ -114,7 +134,7 @@ body{
                 text-align: center;
                 justify-content: space-between;
                 width:variables.$total-width;
-                height: 20%;
+                height: 15%;
                 position: relative;
                 div{
                     @include mixins.score-exact-try-items-style;
@@ -137,12 +157,13 @@ body{
 
             }
         }
-        // fin clique,calcul à faire et choix
+        // fin instruction,calcul à faire et choix
 
         .start-game-compteur{
             display: flex;
             justify-content: space-evenly;
             padding: 5px;
+            margin-bottom: 10px;
             .jouer-relancer{
                 // width: 80%;
                 background-color:variables.$bg-color-choice;
@@ -161,27 +182,12 @@ body{
                 background-color:variables.$bg-color-choice;
                 @include mixins.score-exact-try-items-style;
                 width: 10%;
-                visibility: hidden;
-                // display: none;
+                // visibility: hidden;
+                display: none;
             }
         }
         
     }
-    // .game-over{
-    //     text-transform: uppercase;
-    //     z-index: 5;
-    //     position: relative;
-    //     font-weight: bold;
-    //     // bottom: 370px;
-    //     width: 230px;
-    //     height: 250px;
-    //     text-align: center;
-    //     background: variables.$game-over-bg-color;
-    //     display: flex;
-    //     flex-direction: column;
-    //     justify-content: center;
-    //     font-size: 25px;
-    //     color: variables.$game-over-text;
-    //     // display: none;
-    // }
 }
+
+        

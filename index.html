@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 ,user-scalable=yes">
     <link rel="stylesheet" href="Css/main.css">
     <title>Maths Game</title>
+    <script src="main.js" defer></script>
 </head>
 <body>
     <h1>Défiez Vos Compétences en Multiplication</h1>
@@ -27,31 +28,32 @@
 
 
         <!-- notre div ou le calcul a faire va apparaitres,le message demandant de choisir va apparaitre et les choix possibles aussi -->
-        <div class="afaire-clique-choix">
+        <div class="afaire-instruction-choix">
             <div class="afaire">
-               7*8
+               
             </div>
             <!-- Game over code -->
             <div class="game-over">
-                
+                <p>Game Over</p>
+                <p>Votre Score est de : <span id="scoreGameOver"></span></p>
             </div>
-            <div class="clique">
+            <div class="instruction">
                 Cliquez sur la bonne reponse
             </div>
             <div class="choix">
-                <div class="box1">56</div>
-                <div class="box2">42</div>
-                <div class="box3">25</div>
-                <div class="box4">60</div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
             </div>
         </div>
 
 
          <!-- notre bouton start game et le compteur -->
          <div class="start-game-compteur">
-            <div class="vide">60 sec</div>
+            <!-- <div class="vide">60 sec</div> -->
             <div class="jouer-relancer">Jouer</div>
-            <div class="compteur"><span id="temps-restant">60</span> sec</div>
+            <div class="compteur"><span id="temps-restant">60</span></div>
         </div>
     </div>
     <!-- Game over code
