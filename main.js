@@ -37,14 +37,16 @@
         let tempsRestant = 60;
         let timer;
         let gestionnaireClicAjoute = false;
-    
+        
+        //ajout gestionnaire de clic 
         function ajouterGestionnaireClic() {
             const boxElements = document.querySelectorAll('.box');
-    
+            
+            //pour chaque box, quand on clique , si la reponse est correcte , on augmente le score,on affiche exact pour une seconde, sinon on demande au joueur de reessayer
             boxElements.forEach((box, index) => {
                 box.addEventListener('click', () => {
                     const reponseCorrecte = eval(afaireElement.textContent);
-                    if (parseInt(box.textContent) === reponseCorrecte) {
+                    if (parseInt(box.textContent) === reponseCorrecte) {//convertir notre string en int et comparer la valeur et le type a reponsecorrecte
                         score++;
                         scoreElement.textContent = score;
                         document.querySelector('.exact').style.display = 'block';
@@ -60,54 +62,56 @@
                     }
                 });
             });
-            gestionnaireClicAjoute = true;
+            gestionnaireClicAjoute = true; //à ce niveau le gesionnaireclicAjoute est à true car on vient de cliquer sur une box
         }
-    
+        //generer une nouvelle question,si le gestionnaireClicAjouter est false, apler la fonction ajouterGestionnaireClic
         function genererNouvelleQuestion() {
             if (!gestionnaireClicAjoute) {
                 ajouterGestionnaireClic();
             }
+            //generer deux nombres aleatoires entre 1 et 10 
             const nombre1 = Math.floor(Math.random() * 10) + 1;
             const nombre2 = Math.floor(Math.random() * 10) + 1;
+            //la reponse correcte biensur est le produit
             const reponseCorrecte = nombre1 * nombre2;
-            afaireElement.textContent = `${nombre1} * ${nombre2}`;
+            afaireElement.textContent = `${nombre1} * ${nombre2}`; //dans notre afaire on affiche le produit à faire
     
-            const reponses = [reponseCorrecte];
-            while (reponses.length < 4) {
+            const reponses = [reponseCorrecte]; //on declare et initialise notre tableau reponses avec la reponse correcte dans un premier temps
+            while (reponses.length < 4) { //tant qu'on a pas nos 4 valeurs, genere moi un nombre entre 1 et 100
                 const reponseAleatoire = Math.floor(Math.random() * 100) + 1;
-                if (!reponses.includes(reponseAleatoire)) {
+                if (!reponses.includes(reponseAleatoire)) {//pour ne pas avoir un nombre qui se repete
                     reponses.push(reponseAleatoire);
                 }
             }
     
-            reponses.sort(() => Math.random() - 0.5);
+            reponses.sort(() => Math.random() - 0.5); //une façon de melanger le contenu de notre tableau reponses
     
             const boxElements = choix.querySelectorAll('.box');
-            boxElements.forEach((box, index) => {
+            boxElements.forEach((box, index) => {//index pour index on met chaque element de notre reponses dans chak box
                 box.textContent = reponses[index];
             });
         }
-    
+        //ajout d'ecouteur devenement quand on clique sur le bouton jouer ou relancer
         jouerRelancerBtn.addEventListener('click', () => {
-            if (jouerRelancerBtn.textContent === 'Jouer') {
+            if (jouerRelancerBtn.textContent === 'Jouer') {//si on commence le jeu, on change jouer à relancer
                 jouerRelancerBtn.textContent = 'Relancer';
-                genererNouvelleQuestion();
-                compteurElement.style.display = 'block';
+                genererNouvelleQuestion();//on genere une nouvelle question
+                compteurElement.style.display = 'block';//on affiche le compteur avec 60 au depart puis decrementé seconde après seconde
                 tempsRestant = 60;
                 tempsRestantElement.textContent = tempsRestant;
-                timer = setInterval(() => {
+                timer = setInterval(() => { //stocker dans la variable timer pour pouvoir le stopper par la suite une fois à 0 sec
                     tempsRestant--;
                     tempsRestantElement.textContent = tempsRestant;
-                    if (tempsRestant === 0) {
-                        clearInterval(timer);
-                        gameoverElement.style.display = 'block';
-                        afaireElement.style.display = 'none';
-                        choix.style.pointerEvents = 'none';
-                        document.getElementById('scoreGameOver').textContent = score;
+                    if (tempsRestant === 0) { //lorsqu'on est à 0 seconde
+                        clearInterval(timer);//on arrete le timer à 0 sec
+                        gameoverElement.style.display = 'block'; //on afficher game over
+                        afaireElement.style.display = 'none'; //on affiche pas lelement afaire
+                        choix.style.pointerEvents = 'none'; //nos box ne soit pas cliquable
+                        document.getElementById('scoreGameOver').textContent = score; //et on affiche le score
                     }
                 }, 1000);
             } else {
-                location.reload();
+                location.reload();// si non si on clique sur relancer, on recharge la page
             }
         });
     });
