@@ -193,7 +193,7 @@ body .container .start-game-compteur .jouer-relancer {
 }
 @media (max-width: 700px) {
   body .container .start-game-compteur .jouer-relancer {
-    width: 50px;
+    width: 100px;
   }
 }
 body .container .start-game-compteur .jouer-relancer:hover {
