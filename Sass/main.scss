@@ -100,6 +100,9 @@ body{
                 margin-bottom: 10px;
                 @include mixins.total-centered-item-in-row-flex;
                 font-size: 120px;
+                @media (max-width:700px) {
+                    font-size: 80px;
+                }
             }
             //GameOver box
             .game-over{
@@ -149,13 +152,10 @@ body{
                     position:relative;
                     transition: all 0.5s;
                     cursor: variables.$cursor-pointer;
-                    &:hover{
-                        background-color: variables.$afaire-bg-color;
-                    }
                     &:active{
+                        background-color: variables.$afaire-bg-color;
                         top: 2px;
                     }
-
                 }
 
             }

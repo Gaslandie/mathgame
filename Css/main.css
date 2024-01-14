@@ -113,6 +113,11 @@ body .container .afaire-instruction-choix .afaire {
   align-items: center;
   font-size: 120px;
 }
+@media (max-width: 700px) {
+  body .container .afaire-instruction-choix .afaire {
+    font-size: 80px;
+  }
+}
 body .container .afaire-instruction-choix .game-over {
   border: 1px solid;
   height: auto;
@@ -168,10 +173,8 @@ body .container .afaire-instruction-choix .choix div {
   transition: all 0.5s;
   cursor: pointer;
 }
-body .container .afaire-instruction-choix .choix div:hover {
-  background-color: #FFF9C4;
-}
 body .container .afaire-instruction-choix .choix div:active {
+  background-color: #FFF9C4;
   top: 2px;
 }
 body .container .start-game-compteur {
