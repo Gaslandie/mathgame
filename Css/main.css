@@ -50,6 +50,11 @@ body .container .score-exact-try-box .score {
   width: 15%;
   background-color: #FFF9C4;
 }
+@media (max-width: 700px) {
+  body .container .score-exact-try-box .score {
+    width: 80px;
+  }
+}
 body .container .score-exact-try-box .exact,
 body .container .score-exact-try-box .try-again {
   position: absolute;
@@ -185,6 +190,11 @@ body .container .start-game-compteur .jouer-relancer {
   cursor: pointer;
   position: relative;
   transition: all 0.5s;
+}
+@media (max-width: 700px) {
+  body .container .start-game-compteur .jouer-relancer {
+    width: 50px;
+  }
 }
 body .container .start-game-compteur .jouer-relancer:hover {
   background-color: aquamarine;

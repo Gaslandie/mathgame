@@ -45,6 +45,9 @@ body{
             .score {
               @include mixins.score-exact-try-items-style;
               background-color: variables.$score-bg-color;
+              @media (max-width:700px) {
+                width: 80px;
+              }
             }
           
             .exact,
@@ -166,11 +169,15 @@ body{
             margin-bottom: 10px;
             .jouer-relancer{
                 // width: 80%;
+                // width: 55px;
                 background-color:variables.$bg-color-choice;
                 @include mixins.score-exact-try-items-style;
                 cursor: variables.$cursor-pointer;
                 position: relative;
                 transition: all 0.5s;
+                @media (max-width:700px) {
+                    width: 50px;
+                }
                 &:hover{
                     background-color: aquamarine;
                 }
